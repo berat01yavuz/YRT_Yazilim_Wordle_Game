@@ -68,3 +68,36 @@ Her karakteri deneyen bir if fonksiyonu tanımladık ve eğer (index - 1) ile uy
 eğer uyuşmazsa boşluk yazdırmasını sağladık.
 
 */
+
+int main() {
+
+    int sayac = 0;
+    kelimesecim();
+    
+    
+    while (sayac < 6) {
+        tabloyazdir();
+        printf("%d. tahmininizi giriniz: \n", sayac + 1);
+        scanf("%s", tahmin);
+        sonuc = tablodoldur();
+        
+        if (sonuc == 1) {
+            printf("Tebrikler bildiniz !\nSeçilen kelime: %s\nHazırlayan: Berat Yavuz\n", secilenkelime);
+            break;
+        } else {
+            printf("Maalesef yanlis tahmin\n");
+        }
+        sayac++;
+    }
+    if (sonuc == 0) {
+        printf("Kaybettiniz\nSeçilen kelime: %s\nHazırlayan: Berat Yavuz", secilenkelime);
+    }
+
+    return 0;
+}
+
+/*
+main fonksiyonumuzun içine başta tanımladığımız fonksiyonları çağırdık. While döngüsü ile her kelime tahmininden sonra
+tabloyu verilen tahmin değerleri ile doldurduk ve 6 defa olana kadar tekrar ettirdik.
+İf- else blokları ile sonuç değerlendirmesi yapıp ekrana feedback yazdırdık.
+*/
